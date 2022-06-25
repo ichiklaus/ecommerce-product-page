@@ -14,12 +14,13 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  column-gap: 1.5rem;
-  color: var(--grayish-blue);
+  column-gap: 1.85rem;
+  color: var(--dark-grayish-blue);
   font-weight: 400;
+  font-size: 0.938rem;
 }
 
 .navlist li:hover {
-  color: var(--dark-grayish-blue);
+  color: var(--black);
   cursor: pointer;
 }

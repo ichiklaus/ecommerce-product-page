@@ -8,7 +8,8 @@
   --dark-grayish-blue: hsl(219, 9%, 45%);
   --grayish-blue: hsl(220, 14%, 75%);
   --lightest-grayish-blue: hsl(223, 64%, 98%);
-  --light-grayish-blue: hsl(223, 64%, 95%);
+  --light-grayish-blue: hsl(223, 64%, 93%);
+  --lighter-grayish-blue: hsl(223, 64%, 97%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --black-semi-transparent: hsla(0, 0%, 0%, 0.75);

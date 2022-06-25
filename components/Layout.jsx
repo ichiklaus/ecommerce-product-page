@@ -3,18 +3,18 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-import styles from './layout.module.css';
+import styles from './Layout.module.css';
 
 const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
-    <Seo />
+      <Seo />
       <Header />
       {/* <main>{children}</main> */}
       <Main children={children} />
       <Footer />
     </div>
   );
-}
+};
 
 export default Layout;
