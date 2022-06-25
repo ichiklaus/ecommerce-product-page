@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  flex-basis: auto;
+  justify-content: center;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+}
+
+.header::after {
+  content: "";
+  border-bottom: 1px solid var(--light-grayish-blue);
+  display: flex;
+  flex-basis: 99%;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerLogo {
+  display: block;
+}
+
+.hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.userActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  flex-basis: auto;
+}
+
+.pictureAvatar:hover {
+  outline: 2px solid var(--orange);
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.pictureAvatar:hover, .pictureCart:hover {
+  cursor: pointer;
+}
+
+.pictureAvatar {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.pictureAvatar img {
+  width: 100%;
+  height: 100%;
+}

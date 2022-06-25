@@ -1,0 +1,14 @@
+{
+  "title": "E-commerce Product Page",
+  "author": {
+    "name": "Yeraldo Nicolás Moreira",
+    "author-website": "https://github.com/ichiklaus"
+  },
+  "description": "E-commerce Product Page challenge by Frontend Mentor",
+  "product-brand": "sneaker company",
+  "product-name": "falltime limited edition sneakers",
+  "product-description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+  "product-price": "125.00",
+  "product-discount": "50",
+  "product-real-price": "250.00"
+}

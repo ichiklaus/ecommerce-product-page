@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.navlist {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+  color: var(--grayish-blue);
+  font-weight: 400;
+}
+
+.navlist li:hover {
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+}
