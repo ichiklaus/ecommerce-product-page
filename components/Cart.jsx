@@ -1,7 +1,6 @@
 import Image from 'next/image';
+import { useMemo } from 'react';
 import Button from './Button';
-import data from '../data.json';
-
 import styles from './Cart.module.css';
 
 export default function Checkout({
@@ -9,14 +8,29 @@ export default function Checkout({
   setProductQuantity,
   display,
 }) {
+  // Importing product metadata
   const {
     'fall-limited-sneakers': {
       'product-name': productName,
       'product-price': productPrice,
     },
-  } = data;
-  let totalPrice = Number(productPrice) * Number(productQuantity);
-  totalPrice = Math.round((totalPrice * 100) / 100).toFixed(2);
+  } = require('../data.json');
+
+  // Importing icons metadata
+  const {
+    icons: { 'icon-delete': iconDelete },
+    'fall-limited-sneakers': {
+      'image-product-path': {
+        'product-thumbnail': { 'image-product-1': imageProductThumbnail },
+      },
+    },
+  } = require('../data.json');
+
+  const totalPrice = useMemo(() => {
+    let calcTotalPrice = Number(productPrice) * Number(productQuantity);
+    calcTotalPrice = Math.round((calcTotalPrice * 100) / 100).toFixed(2);
+    return String(calcTotalPrice);
+  });
 
   return (
     <div
@@ -30,7 +44,7 @@ export default function Checkout({
           <div className={`${styles.content} ${styles.contentLayout}`}>
             <Image
               className={styles.previewItem}
-              src={'/images/image-product-1-thumbnail.jpg'}
+              src={imageProductThumbnail}
               width={56}
               height={56}
             />
@@ -39,7 +53,7 @@ export default function Checkout({
               <p>
                 <span>{productPrice}</span>
                 <span> x {productQuantity} </span>
-                <span>${String(totalPrice)}</span>
+                <span>${totalPrice}</span>
               </p>
             </div>
             <div
@@ -47,7 +61,7 @@ export default function Checkout({
               onClick={() => setProductQuantity(0)}
             >
               <object
-                data="/images/icon-delete.svg"
+                data={iconDelete}
                 type="image/svg+xml"
                 aria-label="delete"
               ></object>

@@ -61,6 +61,35 @@
   position: relative;
 }
 
+.pictureCart:active {
+  animation-name: scale;
+  -webkit-animation-name: scale;
+  animation-duration: .5s;
+}
+
+@keyframes scale {
+  from {
+    transform: var(--from-\.85);
+    -webkit-transform: var(--from-\.85);
+    -moz-transform: var(--from-\.85);
+    -ms-transform: var(--from-\.85);
+    -o-transform: var(--from-\.85);
+  }
+
+  to {
+    transform: var(--to-\1);
+    -webkit-transform: var(--to-\1);
+    -moz-transform: var(--to-\1);
+    -ms-transform: var(--to-\1);
+    -o-transform: var(--to-\1);
+  }
+}
+
+.pictureCart img:hover {
+  filter: var(--orange-filter);
+  -webkit-filter: var(--orange-filter);
+}
+
 .pictureAvatar:hover,
 .pictureCart:hover {
   cursor: pointer;

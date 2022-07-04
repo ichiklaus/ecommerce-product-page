@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import styles from './ProductImageGallery.module.css';
 
 const ProductImageGallery = ({
@@ -9,22 +8,18 @@ const ProductImageGallery = ({
   setToggleGallery,
   gallery,
 }) => {
+  // Importing metadata about the product
   const {
     'fall-limited-sneakers': {
-      'image-product-path': { 'product-thumbnail': productThumbnail },
+      'product-name': productName,
+      'image-product-path': {
+        'product-thumbnail': productThumbnail,
+        'image-product': imageProduct,
+      },
     },
   } = require('../data.json');
 
-  const {
-    'fall-limited-sneakers': {
-      'image-product-path': { 'image-product': imageProduct },
-    },
-  } = require('../data.json');
-
-  const {
-    'fall-limited-sneakers': { 'product-name': productName },
-  } = require('../data.json');
-
+  // Importing metadata about functionality icons
   const {
     icons: {
       'icon-close': iconClose,
@@ -40,11 +35,12 @@ const ProductImageGallery = ({
   const activeThumbnail = (name, style) =>
     Number(name.slice(-1)) == activeContent ? style : '';
 
+  // Gallery controls: close, next image, previous image.
+  const closeGallery = () => gallery && setToggleGallery(!toggleGallery);
   const nextImage = () => {
     activeContent <= 4 && setActiveContent(activeContent + 1);
     activeContent === 4 && setActiveContent(1);
   };
-
   const prevImage = () => {
     activeContent > 0 && setActiveContent(activeContent - 1);
     activeContent === 1 && setActiveContent(4);
@@ -72,7 +68,7 @@ const ProductImageGallery = ({
             return (
               <Image
                 key={name}
-                className={styles.productImage}
+                className={`${styles.productImage} ${styles.productImageAni}`}
                 width={450}
                 height={450}
                 src={relativePath}
@@ -88,9 +84,7 @@ const ProductImageGallery = ({
             <>
               <span className={styles.iconClose}>
                 <Image
-                  onClick={() => {
-                    gallery && setToggleGallery(!toggleGallery);
-                  }}
+                  onClick={closeGallery}
                   src={iconClose}
                   layout="fixed"
                   width={20}
@@ -119,7 +113,7 @@ const ProductImageGallery = ({
             return (
               <picture
                 key={name}
-                className={activeThumbnail(name, styles.activeWrapper)}
+                className={`${activeThumbnail(name, styles.activeWrapper)} ${styles.thumbnailContainer}`}
               >
                 <Image
                   onClick={() => setActiveContent(Number(name.slice(-1)))}

@@ -65,6 +65,29 @@
   height: auto;
 }
 
+.productImageAni {
+  animation-name: scaleImage;
+  animation-duration: 1s;
+}
+
+@keyframes scaleImage {
+  from {
+    transform: var(--from-\.97);
+    -webkit-transform: var(--from-\.97);
+    -moz-transform: var(--from-\.97);
+    -ms-transform: var(--from-\.97);
+    -o-transform: var(--from-\.97);
+  }
+
+  to {
+    transform: var(--to-\1);
+    -webkit-transform: var(--to-\1);
+    -moz-transform: var(--to-\1);
+    -ms-transform: var(--to-\1);
+    -o-transform: var(--to-\1);
+  }
+}
+
 .productPictureRelative {
   position: relative;
 }
@@ -97,11 +120,31 @@
   -o-border-radius: 10px;
 }
 
+.activeWrapper,
+.thumbnailContainer {
+  background-color: white !important;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  -ms-border-radius: 10px !important;
+  -o-border-radius: 10px !important;
+}
+
 .thumbnail:hover,
 .activeThumbnail {
+  filter: opacity(.5);
+  -webkit-filter: opacity(.5);
+}
+
+.thumbnail:hover,
+.activeThumbnail,
+.productImage,
+.iconClose:hover,
+.circleWrapper:hover {
   cursor: pointer;
-  /* filter: opacity(50%);
-  -webkit-filter: opacity(50%); */
 }
 
 .activeWrapper {
@@ -121,8 +164,8 @@
 }
 
 .iconClose:hover {
-  color: red;
-  cursor: pointer;
+  filter: var(--orange-filter);
+  -webkit-filter: var(--orange-filter);
 }
 
 .circleWrapper {
@@ -140,11 +183,8 @@
   top: 50%;
 }
 
-.circleWrapper:hover {
-  cursor: pointer;
-}
-
-.circleRight img, .circleLeft img {
+.circleRight img,
+.circleLeft img {
   display: block;
   width: auto;
   height: auto;
@@ -152,8 +192,8 @@
 
 .circleRight img:hover,
 .circleLeft img:hover {
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
-  -webkit-filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  filter: var(--orange-filter);
+  -webkit-filter: var(--orange-filter);
 }
 
 .circleRight {

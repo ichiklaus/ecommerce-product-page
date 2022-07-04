@@ -18,6 +18,36 @@
   letter-spacing: 0.05rem;
 }
 
+.button:active {
+  animation-name: scaleButton;
+  animation-duration: 0.5s;
+}
+
+/* 
+It scales up on start
+.button:enabled {
+  animation-name: scaleButton;
+  animation-duration: 0.5s;
+} */
+
+@keyframes scaleButton {
+  from {
+    transform: var(--from-\.85);
+    -webkit-transform: var(--from-\.85);
+    -moz-transform: var(--from-\.85);
+    -ms-transform: var(--from-\.85);
+    -o-transform: var(--from-\.85);
+  }
+
+  to {
+    transform: var(--from-\1);
+    -webkit-transform: var(--from-\1);
+    -moz-transform: var(--from-\1);
+    -ms-transform: var(--from-\1);
+    -o-transform: var(--from-\1);
+  }
+}
+
 .button:hover {
   cursor: pointer;
   box-shadow: 0 15px 25px -10px var(--orange);

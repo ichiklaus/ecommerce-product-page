@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 const Header = ({ productQuantity, setProductQuantity }) => {
+  // Importing icons' metadata
   const {
     icons: {
       'logo-sneakers': logo,

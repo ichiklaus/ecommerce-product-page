@@ -5,15 +5,15 @@ import styles from './AddToCart.module.css';
 export default function AddToCart({ setProductQuantity }) {
   const [counter, setCounter] = useState(0);
 
-  const addOneItem = () => {
-    setCounter(counter + 1);
-  };
+  // Importing control icons metadata
+  const {
+    icons: { 'icon-plus': iconPlus, 'icon-minus': iconMinus },
+  } = require('../data.json');
 
-  const removeOneItem = () => {
-    if (counter > 0) setCounter(counter - 1);
-  };
-
-  const onSubmit = (event) => {
+  // Add-total-items-to-cart controls: Add one, remove one, submit items.
+  const addOneItem = () => setCounter(counter + 1);
+  const removeOneItem = () => counter > 0 && setCounter(counter - 1);
+  const submitItems = (event) => {
     event.preventDefault();
     setProductQuantity(counter);
   };
@@ -21,23 +21,23 @@ export default function AddToCart({ setProductQuantity }) {
   return (
     <div id="add-to-cart" className={styles.container}>
       <div className={styles.actionWrapper}>
-        <div className={styles.removeOneItem} onClick={removeOneItem}>
+        <div className={`${styles.iconAnimation} ${styles.removeOne}`} onClick={removeOneItem}>
           <object
-            data="/images/icon-minus.svg"
+            data={iconMinus}
             type="image/svg+xml"
             aria-label="minus"
           />
         </div>
         <span>{counter}</span>
-        <div className={styles.addOneItem} onClick={addOneItem}>
+        <div className={`${styles.iconAnimation} ${styles.addOne}`} onClick={addOneItem}>
           <object
-            data="/images/icon-plus.svg"
+            data={iconPlus}
             type="image/svg+xml"
             aria-label="plus"
           />
         </div>
       </div>
-      <Button onSubmit={onSubmit} text={'Add to cart'} />
+      <Button onSubmit={submitItems} text={'Add to cart'} />
     </div>
   );
 }
