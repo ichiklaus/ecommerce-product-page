@@ -1,6 +1,6 @@
 .main {
-  min-height: 100vh;
-  padding: 5.65rem 0 0;
+  height: 100vh;
+  padding-top: 4rem;
   flex: 1;
   display: flex;
 }

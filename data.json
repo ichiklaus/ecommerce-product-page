@@ -4,11 +4,39 @@
     "name": "Yeraldo Nicolás Moreira",
     "author-website": "https://github.com/ichiklaus"
   },
-  "description": "E-commerce Product Page challenge by Frontend Mentor",
-  "product-brand": "sneaker company",
-  "product-name": "falltime limited edition sneakers",
-  "product-description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-  "product-price": "125.00",
-  "product-discount": "50",
-  "product-real-price": "250.00"
+  "icons": {
+    "logo-sneakers": "/images/logo.svg",
+    "icon-cart": "/images/icon-cart.svg",
+    "icon-close": "/images/icon-close.svg",
+    "icon-delete": "/images/icon-delete.svg",
+    "icon-menu": "/images/icon-menu.svg",
+    "icon-minus": "/images/icon-minus.svg",
+    "icon-next": "/images/icon-next.svg",
+    "icon-plus": "/images/icon-plus.svg",
+    "icon-previous": "/images/icon-previous.svg",
+    "image-avatar": "/images/image-avatar.png"
+  },
+  "fall-limited-sneakers": {
+    "description": "E-commerce Product Page challenge by Frontend Mentor",
+    "product-brand": "sneaker company",
+    "product-name": "fall limited edition sneakers",
+    "product-description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
+    "product-price": "125.00",
+    "product-discount": "50",
+    "product-real-price": "250.00",
+    "image-product-path": {
+      "image-product": {
+        "image-product-1": "/images/image-product-1.jpg",
+        "image-product-2": "/images/image-product-2.jpg",
+        "image-product-3": "/images/image-product-3.jpg",
+        "image-product-4": "/images/image-product-4.jpg"
+      },
+      "product-thumbnail": {
+        "image-product-1": "/images/image-product-1-thumbnail.jpg",
+        "image-product-2": "/images/image-product-2-thumbnail.jpg",
+        "image-product-3": "/images/image-product-3-thumbnail.jpg",
+        "image-product-4": "/images/image-product-4-thumbnail.jpg"
+      }
+    }
+  }
 }

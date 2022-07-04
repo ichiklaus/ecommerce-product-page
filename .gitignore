@@ -44,8 +44,9 @@ yarn-error.log*
 ###############################################
 *.xd
 
-# Avoid your project being littered with annoying .DS_Store files!
+# Avoid your project being littered with annoying files!
 .DS_Store
 .prettierignore
-/public/design
+design
 style-guide.md
+challenge-overview.md

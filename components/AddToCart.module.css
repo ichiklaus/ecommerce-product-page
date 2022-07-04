@@ -19,7 +19,8 @@
   position: relative;
 }
 
-.actionWrapper span {
+.actionWrapper span,
+.actionWrapper input[type=text] {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -28,6 +29,10 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   font-weight: 700;
+}
+
+.actionWrapper input[type=text] {
+  width: 50px;
 }
 
 .removeOneItem,
@@ -39,37 +44,14 @@
   height: 24px;
 }
 
-.submit {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  flex-basis: 14.75rem;
-  background-color: var(--orange);
-  color: var(--white);
-  outline: none;
-  border: none;
-  border-radius: 7px;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  -ms-border-radius: 7px;
-  -o-border-radius: 7px;
-}
-
 .removeOneItem object,
 .addOneItem object {
   pointer-events: none;
 }
 
 .removeOneItem:hover,
-.addOneItem:hover,
-.submit:hover {
+.addOneItem:hover {
   cursor: pointer;
-  filter: opacity(70%);
-  -webkit-filter: opacity(70%);
-}
-
-.submit:hover {
-  box-shadow: 0 15px 45px -10px var(--orange);
+  filter: opacity(90%);
+  -webkit-filter: opacity(90%);
 }

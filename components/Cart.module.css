@@ -1,0 +1,89 @@
+.wrapper {
+  width: 20rem;
+  height: 12.95rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  right: 5rem;
+  top: 7rem;
+  background-color: var(--white);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 30px;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+
+.wrapper>p:nth-child(1) {
+  font-weight: 700;
+  font-size: 14px;
+  padding-left: 1rem;
+  padding-top: 0.35rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  border-top: 1px solid var(--light-grayish-blue);
+}
+
+.contentLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 15px;
+}
+
+.emptyWarning {
+  display: grid;
+  place-content: center;
+  height: 100%;
+}
+
+.emptyText {
+  text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--dark-grayish-blue);
+}
+
+.previewItem {
+  flex-basis: 84px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.cartInfo {
+  color: var(--dark-grayish-blue);
+}
+
+.cartInfo > p:nth-child(1) {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.cartInfo > p:nth-child(2) > span:nth-child(3) {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.deleteIcon object {
+  pointer-events: none;
+}
+
+.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
