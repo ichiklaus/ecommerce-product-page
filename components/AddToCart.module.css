@@ -40,24 +40,6 @@
   animation-duration: 1s;
 }
 
-@keyframes scale {
-  from {
-    transform: var(--from-\.85);
-    -webkit-transform: var(--from-\.85);
-    -moz-transform: var(--from-\.85);
-    -ms-transform: var(--from-\.85);
-    -o-transform: var(--from-\.85);
-  }
-
-  to {
-    transform: var(--to-\1);
-    -webkit-transform: var(--to-\1);
-    -moz-transform: var(--to-\1);
-    -ms-transform: var(--to-\1);
-    -o-transform: var(--to-\1);
-  }
-}
-
 .removeOne,
 .addOne {
   display: flex;
@@ -77,4 +59,35 @@
   cursor: pointer;
   filter: opacity(90%);
   -webkit-filter: opacity(90%);
+}
+
+@keyframes scale {
+  from {
+    transform: var(--from-\.85);
+    -webkit-transform: var(--from-\.85);
+    -moz-transform: var(--from-\.85);
+    -ms-transform: var(--from-\.85);
+    -o-transform: var(--from-\.85);
+  }
+
+  to {
+    transform: var(--to-\1);
+    -webkit-transform: var(--to-\1);
+    -moz-transform: var(--to-\1);
+    -ms-transform: var(--to-\1);
+    -o-transform: var(--to-\1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 16px;
+  }
+
+  .actionWrapper {
+    width: 90% !important;
+  }
 }

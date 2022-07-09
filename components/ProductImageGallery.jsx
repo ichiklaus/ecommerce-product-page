@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './ProductImageGallery.module.css';
 
@@ -8,6 +9,18 @@ const ProductImageGallery = ({
   setToggleGallery,
   gallery,
 }) => {
+  const [isMobileResolution, setIsMobileResolution] = useState(false);
+  useEffect(() => {
+    function handleResize() {
+      window.innerWidth < 480
+        ? setIsMobileResolution(true)
+        : setIsMobileResolution(false);
+    }
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   // Importing metadata about the product
   const {
     'fall-limited-sneakers': {
@@ -69,13 +82,15 @@ const ProductImageGallery = ({
               <Image
                 key={name}
                 className={`${styles.productImage} ${styles.productImageAni}`}
-                width={450}
-                height={450}
+                width={!isMobileResolution ? 450 : 375}
+                height={!isMobileResolution ? 450 : 350}
                 src={relativePath}
                 alt={productName}
                 onClick={() => {
                   // If it's not of type gallery, then change state of toggleGallery accordingly to pop up the gallery by clicking on the Product preview image
-                  !gallery && setToggleGallery(!toggleGallery);
+                  !isMobileResolution &&
+                    !gallery &&
+                    setToggleGallery(!toggleGallery);
                 }}
               />
             );
@@ -107,13 +122,41 @@ const ProductImageGallery = ({
               </span>
             </>
           )}
+          {isMobileResolution && !gallery && (
+            <>
+              <span className={styles.iconClose}>
+                <Image
+                  onClick={closeGallery}
+                  src={iconClose}
+                  layout="fixed"
+                  width={20}
+                  height={20}
+                  aria-label="close"
+                />
+              </span>
+              <span
+                className={`${styles.circleWrapper} ${styles.circleRight}`}
+                onClick={nextImage}
+              >
+                <Image src={iconNext} width={14} height={14} />
+              </span>
+              <span
+                className={`${styles.circleWrapper} ${styles.circleLeft}`}
+                onClick={prevImage}
+              >
+                <Image src={iconPrevious} width={14} height={14} />
+              </span>
+            </>
+          )}
         </picture>
         <div className={styles.thumbnailWrapper}>
           {Object.entries(productThumbnail).map(([name, relativePath]) => {
             return (
               <picture
                 key={name}
-                className={`${activeThumbnail(name, styles.activeWrapper)} ${styles.thumbnailContainer}`}
+                className={`${activeThumbnail(name, styles.activeWrapper)} ${
+                  styles.thumbnailContainer
+                }`}
               >
                 <Image
                   onClick={() => setActiveContent(Number(name.slice(-1)))}

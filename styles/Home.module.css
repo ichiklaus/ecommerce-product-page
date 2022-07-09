@@ -24,7 +24,6 @@
 .productInfo>div>h1 {
   text-transform: capitalize;
   font-weight: 700;
-  font-size: 2.75rem;
   margin-top: 0;
 }
 
@@ -56,8 +55,20 @@
   -o-border-radius: 2px;
 }
 
-.productInfo p:nth-child(5) {
+.discount {
   font-weight: 700;
   color: var(--grayish-blue);
   text-decoration: line-through;
+}
+
+@media screen and (max-width: 480px) {
+  .productInfo {
+    padding: 0 1rem;
+  }
+
+  .pricing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

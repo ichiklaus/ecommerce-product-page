@@ -35,11 +35,13 @@ export default function Home({ setProductQuantity }) {
           <p>{productBrand}</p>
           <h1>{productName}</h1>
           <p>{productDescription}</p>
-          <p className={styles.productValue}>
-            <span>${formatToFixed2(Number(productPrice))}</span>
-            <small>{Number(productDiscount)}%</small>
-          </p>
-          <p>${formatToFixed2(productRealPrice)}</p>
+          <div className={styles.pricing}>
+            <p className={styles.productValue}>
+              <span>${formatToFixed2(Number(productPrice))}</span>
+              <small>{Number(productDiscount)}%</small>
+            </p>
+            <p className={styles.discount}>${formatToFixed2(productRealPrice)}</p>
+          </div>
         </div>
         <AddToCart setProductQuantity={setProductQuantity} />
       </section>
