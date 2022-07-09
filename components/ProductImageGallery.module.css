@@ -64,6 +64,12 @@
   animation-duration: 1s;
 }
 
+.imageContainer {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
 .productPictureRelative {
   position: relative;
 }
@@ -75,7 +81,6 @@
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
-
 
 .thumbnailWrapper {
   display: flex;
@@ -131,6 +136,8 @@
 
 .iconClose {
   position: absolute;
+  top: 0;
+  right: -1.5rem;
   transform: translate(-100%, -150%);
   -webkit-transform: translate(-100%, -150%);
   -moz-transform: translate(-100%, -150%);
@@ -198,6 +205,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .imageContainer {
+    width: 100vw;
+    height: 350px;
+  }
   .productImage {
     border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -215,8 +226,8 @@
   }
 
   .circleWrapper {
-    top: 40% !important;
-  }
+    top: 35% !important;
+}
 
   .circleRight {
     right: 1rem !important;

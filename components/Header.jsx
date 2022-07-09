@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Navbar from './Navbar';
 import Cart from './Cart';
-import Image from 'next/image';
+import HamburgerMenu from './HamburgerMenu';
 import styles from './Header.module.css';
 
 const Header = ({ productQuantity, setProductQuantity }) => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
   // Importing icons' metadata
   const {
     icons: {
@@ -19,6 +21,11 @@ const Header = ({ productQuantity, setProductQuantity }) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerLeftSide}>
+        <HamburgerMenu
+          setHamburgerOpen={setHamburgerOpen}
+          hamburgerOpen={hamburgerOpen}
+        />
+        {hamburgerOpen && <Navbar hamburgerOpen={hamburgerOpen} />}
         <a className={styles.headerLogo} href="#">
           <Image src={logo} width={138} height={20} alt="Sneakers" />
           <span className={styles.hidden}>sneakers</span>

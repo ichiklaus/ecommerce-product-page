@@ -73,26 +73,33 @@ const ProductImageGallery = ({
         }`}
       >
         <picture
+          id="product-picture"
           className={`${styles.productPicture} ${
             gallery && styles.productPictureRelative
-          }`}
+          } ${!gallery && isMobileResolution && styles.productPictureRelative}`}
         >
           {imageArray.map(([name, relativePath]) => {
             return (
-              <Image
-                key={name}
-                className={`${styles.productImage} ${styles.productImageAni}`}
-                width={!isMobileResolution ? 450 : 375}
-                height={!isMobileResolution ? 450 : 350}
-                src={relativePath}
-                alt={productName}
-                onClick={() => {
-                  // If it's not of type gallery, then change state of toggleGallery accordingly to pop up the gallery by clicking on the Product preview image
-                  !isMobileResolution &&
-                    !gallery &&
-                    setToggleGallery(!toggleGallery);
-                }}
-              />
+              <div className={styles.imageContainer}>
+                <Image
+                  key={name}
+                  className={`${styles.productImage} ${styles.productImageAni}`}
+                  // maxWidth={!isMobileResolution ? 450 : 375}
+                  // width={100}
+                  // height={100}
+                  // maxHeight={!isMobileResolution ? 450 : 350}
+                  layout={'fill'}
+                  objectFit={'fill'}
+                  src={relativePath}
+                  alt={productName}
+                  onClick={() => {
+                    // If it's not of type gallery, then change state of toggleGallery accordingly to pop up the gallery by clicking on the Product preview image
+                    !isMobileResolution &&
+                      !gallery &&
+                      setToggleGallery(!toggleGallery);
+                  }}
+                />
+              </div>
             );
           })}
           {gallery && (

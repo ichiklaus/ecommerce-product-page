@@ -50,6 +50,54 @@
 
 @media screen and (max-width: 480px) {
   .navbar {
+    align-items: flex-start;
+  }
+
+  .hidden {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .visible {
+    background-color: var(--white);
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 65%;
+  }
+
+  .visible>.navlist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 0.85rem;
+    position: relative;
+    top: 5rem;
+    left: 0rem;
+    text-align: left;
+  }
+
+  .visible>.navlist>* {
+    font-weight: 700;
+    color: var(--black);
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--black-semi-transparent);
+    width: 100%;
+    min-height: 100%;
+  }
+
+
+  .navlist li:after {
+    top: 0.2rem;
   }
 }
