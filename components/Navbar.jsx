@@ -2,8 +2,19 @@ import styles from './Navbar.module.css';
 
 const Navbar = ({ hamburgerOpen }) => {
   return (
-    <div className={hamburgerOpen && styles.overlay}>
-      <nav className={`${styles.navbar} ${hamburgerOpen ? styles.visible : styles.hidden}`}>
+    <div
+      className={`${styles.fadeIn} ${
+        hamburgerOpen ? `${styles.overlay}` : styles.overlayHidden
+      }`}
+    >
+      <nav
+        className={`${styles.navbar} ${
+          hamburgerOpen
+            ? `${styles.visibleNavbar} ${styles.slideIn}`
+            : `${styles.hiddenNavbar}`
+        }`}
+      >
+        {/*   */}
         <ul className={styles.navlist}>
           <li>Collections</li>
           <li>Men</li>

@@ -12,7 +12,7 @@ const ProductImageGallery = ({
   const [isMobileResolution, setIsMobileResolution] = useState(false);
   useEffect(() => {
     function handleResize() {
-      window.innerWidth < 480
+      window.innerWidth <= 820
         ? setIsMobileResolution(true)
         : setIsMobileResolution(false);
     }
@@ -80,14 +80,14 @@ const ProductImageGallery = ({
         >
           {imageArray.map(([name, relativePath]) => {
             return (
-              <div className={styles.imageContainer}>
+              <div
+                key={name}
+                className={
+                  gallery ? styles.galleryImageContainer : styles.imageContainer
+                }
+              >
                 <Image
-                  key={name}
                   className={`${styles.productImage} ${styles.productImageAni}`}
-                  // maxWidth={!isMobileResolution ? 450 : 375}
-                  // width={100}
-                  // height={100}
-                  // maxHeight={!isMobileResolution ? 450 : 350}
                   layout={'fill'}
                   objectFit={'fill'}
                   src={relativePath}
