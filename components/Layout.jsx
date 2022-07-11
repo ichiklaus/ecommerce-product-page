@@ -1,6 +1,6 @@
 import Seo from './Seo';
 import Header from './Header';
-import Main from './Main';
+// import Main from './Main';
 import Footer from './Footer';
 
 import styles from './Layout.module.css';
@@ -13,7 +13,8 @@ const Layout = ({ children, productQuantity, setProductQuantity }) => {
         productQuantity={productQuantity}
         setProductQuantity={setProductQuantity}
       />
-      <Main children={children} />
+      {/* <Main children={children} /> */}
+      <main className={styles.main}>{children}</main>;
       <Footer />
     </div>
   );

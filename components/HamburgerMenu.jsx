@@ -14,6 +14,7 @@ const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
         <div className={styles.iconWrapper}>
           <Image
             className={hamburgerOpen && styles.transitionToRight}
+            alt='Close'
             layout="fill"
             src={iconClose}
             onClick={() => {
@@ -28,6 +29,7 @@ const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
             className={!hamburgerOpen && styles.transitionToLeft}
             layout="fill"
             src={iconMenu}
+            alt='Menu'
             onClick={() => {
               setHamburgerOpen(!hamburgerOpen);
             }}

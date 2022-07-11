@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { useMemo } from 'react';
 import Button from './Button';
 import styles from './Cart.module.css';
 
@@ -26,11 +25,11 @@ export default function Checkout({
     },
   } = require('../data.json');
 
-  const totalPrice = useMemo(() => {
+  const totalPrice = () => {
     let calcTotalPrice = Number(productPrice) * Number(productQuantity);
     calcTotalPrice = Math.round((calcTotalPrice * 100) / 100).toFixed(2);
     return String(calcTotalPrice);
-  });
+  };
 
   return (
     <div
@@ -45,6 +44,7 @@ export default function Checkout({
             <Image
               className={styles.previewItem}
               src={imageProductThumbnail}
+              alt='Product preview'
               width={56}
               height={56}
             />

@@ -104,14 +104,13 @@ const ProductImageGallery = ({
           })}
           {gallery && (
             <>
-              <span className={styles.iconClose}>
-                <Image
-                  onClick={closeGallery}
-                  src={iconClose}
-                  layout="fixed"
-                  width={20}
-                  height={20}
-                  // type="image/svg+xml"
+              <span className={styles.iconClose} onClick={closeGallery}>
+                <object
+                  style={{ pointerEvents: 'none' }}
+                  data={iconClose}
+                  // layout="fixed"
+                  // width={20}
+                  // height={20}
                   aria-label="close"
                 />
               </span>
@@ -119,13 +118,18 @@ const ProductImageGallery = ({
                 className={`${styles.circleWrapper} ${styles.circleRight}`}
                 onClick={nextImage}
               >
-                <Image src={iconNext} width={14} height={14} />
+                <Image src={iconNext} width={14} height={14} alt="next" />
               </span>
               <span
                 className={`${styles.circleWrapper} ${styles.circleLeft}`}
                 onClick={prevImage}
               >
-                <Image src={iconPrevious} width={14} height={14} />
+                <Image
+                  src={iconPrevious}
+                  width={14}
+                  height={14}
+                  alt="previous"
+                />
               </span>
             </>
           )}
@@ -139,19 +143,25 @@ const ProductImageGallery = ({
                   width={20}
                   height={20}
                   aria-label="close"
+                  alt="close"
                 />
               </span>
               <span
                 className={`${styles.circleWrapper} ${styles.circleRight}`}
                 onClick={nextImage}
               >
-                <Image src={iconNext} width={14} height={14} />
+                <Image src={iconNext} width={14} height={14} alt="next" />
               </span>
               <span
                 className={`${styles.circleWrapper} ${styles.circleLeft}`}
                 onClick={prevImage}
               >
-                <Image src={iconPrevious} width={14} height={14} />
+                <Image
+                  src={iconPrevious}
+                  width={14}
+                  height={14}
+                  alt="previous"
+                />
               </span>
             </>
           )}
