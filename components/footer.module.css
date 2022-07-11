@@ -11,6 +11,8 @@
 .footer span {
   display: flex;
   column-gap: 3px;
+  font-size: clamp(14px, calc(0.875rem + ((1vw - 3.76px) * 0.188)), 16px);
+  min-height: 0vw;
 }
 
 .footerCredit:hover {

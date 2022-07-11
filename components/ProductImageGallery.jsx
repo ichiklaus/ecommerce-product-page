@@ -75,8 +75,8 @@ const ProductImageGallery = ({
         <picture
           id="product-picture"
           className={`${styles.productPicture} ${
-            gallery && styles.productPictureRelative
-          } ${!gallery && isMobileResolution && styles.productPictureRelative}`}
+            gallery && styles.positionRelative
+          } ${!gallery && isMobileResolution && styles.positionRelative}`}
         >
           {imageArray.map(([name, relativePath]) => {
             return (
@@ -88,7 +88,7 @@ const ProductImageGallery = ({
               >
                 <Image
                   priority
-                  className={`${styles.productImage} ${styles.productImageAni}`}
+                  className={`${styles.productImage} ${styles.productImageScaleAnimation}`}
                   layout={'fill'}
                   objectFit={'fill'}
                   src={relativePath}

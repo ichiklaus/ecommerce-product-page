@@ -12,7 +12,7 @@ const Layout = ({ children, productQuantity, setProductQuantity }) => {
         productQuantity={productQuantity}
         setProductQuantity={setProductQuantity}
       />
-      <main className={styles.main}>{children}</main>;
+      <main className={styles.main}>{children}</main>
       <Footer />
     </div>
   );

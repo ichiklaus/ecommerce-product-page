@@ -38,7 +38,7 @@ const Header = ({ productQuantity, setProductQuantity }) => {
           onClick={() => setDisplay(!display)}
         >
           <Image src={iconCart} alt="Cart" width={24} height={22} />
-          <small className={styles.toolTip}>{productQuantity}</small>
+          <small className={styles.badge}>{productQuantity}</small>
         </picture>
         <Cart
           productQuantity={productQuantity}

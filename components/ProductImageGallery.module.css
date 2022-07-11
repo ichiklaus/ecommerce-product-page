@@ -1,7 +1,11 @@
-.overlay {
+.overlay,
+.hidden {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.overlay {
   z-index: 1000;
 }
 
@@ -26,9 +30,6 @@
   width: 100%;
   height: 100vw;
   visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   transform: scale(0);
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
@@ -49,7 +50,6 @@
 }
 
 .galleryPosition {
-  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -44%);
@@ -59,24 +59,25 @@
   -o-transform: translate(-50%, -44%);
 }
 
-.productImageAni {
+.productImageScaleAnimation {
   animation-name: scaleImage;
   animation-duration: 1s;
 }
 
 .imageContainer {
-  position: relative;
   width: 450px;
   height: 450px;
 }
 
 .galleryImageContainer {
-  position: relative;
   width: 500px;
   height: 500px;
 }
 
-.productPictureRelative {
+.positionRelative,
+.imageContainer,
+.galleryImageContainer,
+.galleryPosition {
   position: relative;
 }
 
@@ -143,7 +144,7 @@
 .iconClose {
   position: absolute;
   top: 0;
-  right: -1.5rem;
+  right: -1.25rem;
   transform: translate(-100%, -150%);
   -webkit-transform: translate(-100%, -150%);
   -moz-transform: translate(-100%, -150%);

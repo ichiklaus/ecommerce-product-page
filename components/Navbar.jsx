@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './Navbar.module.css';
 
 const Navbar = ({ hamburgerOpen }) => {
@@ -16,10 +17,18 @@ const Navbar = ({ hamburgerOpen }) => {
       >
         {/*   */}
         <ul className={styles.navlist}>
-          <li>Collections</li>
+          <li>
+            <Link href="/">
+              <a>Collections</a>
+            </Link>
+          </li>
           <li>Men</li>
           <li>Women</li>
-          <li>About</li>
+          <li>
+            <Link href=''>
+              <a>About</a>
+            </Link>
+          </li>
           <li>Contact</li>
         </ul>
       </nav>

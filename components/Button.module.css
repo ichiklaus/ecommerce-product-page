@@ -23,8 +23,6 @@
   animation-duration: 0.5s;
 }
 
-
-
 .button:hover {
   cursor: pointer;
   box-shadow: 0 15px 25px -10px var(--orange);
@@ -42,13 +40,6 @@
 .checkout {
   width: 90%;
 }
-
-/* 
-It scales up on start
-.button:enabled {
-  animation-name: scaleButton;
-  animation-duration: 0.5s;
-} */
 
 @keyframes scaleButton {
   from {

@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 820px) {  
+@media screen and (max-width: 820px) {
   .navlist li:after {
     top: 0.4rem;
   }
