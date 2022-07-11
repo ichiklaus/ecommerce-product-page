@@ -27,7 +27,7 @@ const Header = ({ productQuantity, setProductQuantity }) => {
         />
         {hamburgerOpen && <Navbar hamburgerOpen={hamburgerOpen} />}
         <a className={styles.headerLogo} href="#">
-          <Image src={logo} width={138} height={20} alt="Sneakers" />
+          <Image src={logo} width={138} height={20} alt="Website logo" />
           <span className={styles.hidden}>sneakers</span>
         </a>
         <Navbar />
