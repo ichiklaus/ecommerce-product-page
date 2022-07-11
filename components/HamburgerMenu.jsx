@@ -3,7 +3,6 @@ import Image from 'next/image';
 import styles from './HamburgerMenu.module.css';
 
 const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
-
   const {
     icons: { 'icon-close': iconClose, 'icon-menu': iconMenu },
   } = require('../data.json');
@@ -14,7 +13,7 @@ const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
         <div className={styles.iconWrapper}>
           <Image
             className={hamburgerOpen && styles.transitionToRight}
-            alt='Close'
+            alt="Close"
             layout="fill"
             src={iconClose}
             onClick={() => {
@@ -29,7 +28,7 @@ const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
             className={!hamburgerOpen && styles.transitionToLeft}
             layout="fill"
             src={iconMenu}
-            alt='Menu'
+            alt="Menu"
             onClick={() => {
               setHamburgerOpen(!hamburgerOpen);
             }}

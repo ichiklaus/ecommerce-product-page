@@ -71,6 +71,7 @@
 }
 
 .galleryImageContainer {
+  position: relative;
   width: 500px;
   height: 500px;
 }
@@ -211,6 +212,7 @@
 
 @media screen and (max-width: 480px) {
   .imageContainer {
+    position: relative;
     width: 100vw;
     height: 350px;
   }

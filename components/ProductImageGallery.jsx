@@ -87,6 +87,7 @@ const ProductImageGallery = ({
                 }
               >
                 <Image
+                  priority
                   className={`${styles.productImage} ${styles.productImageAni}`}
                   layout={'fill'}
                   objectFit={'fill'}
@@ -108,9 +109,6 @@ const ProductImageGallery = ({
                 <object
                   style={{ pointerEvents: 'none' }}
                   data={iconClose}
-                  // layout="fixed"
-                  // width={20}
-                  // height={20}
                   aria-label="close"
                 />
               </span>
