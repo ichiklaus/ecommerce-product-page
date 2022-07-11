@@ -73,10 +73,11 @@ const ProductImageGallery = ({
         }`}
       >
         <picture
-          id="product-picture"
           className={`${styles.productPicture} ${
-            gallery && styles.positionRelative
-          } ${!gallery && isMobileResolution && styles.positionRelative}`}
+            gallery ? styles.positionRelative : ''
+          } ${
+            !gallery ? (isMobileResolution ? styles.positionRelative : '') : ''
+          }`}
         >
           {imageArray.map(([name, relativePath]) => {
             return (
@@ -95,9 +96,11 @@ const ProductImageGallery = ({
                   alt={productName}
                   onClick={() => {
                     // If it's not of type gallery, then change state of toggleGallery accordingly to pop up the gallery by clicking on the Product preview image
-                    !isMobileResolution &&
-                      !gallery &&
-                      setToggleGallery(!toggleGallery);
+                    !isMobileResolution
+                      ? !gallery
+                        ? setToggleGallery(!toggleGallery)
+                        : ''
+                      : '';
                   }}
                 />
               </div>
