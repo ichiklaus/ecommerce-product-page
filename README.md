@@ -26,13 +26,7 @@ This is a solution to the [E-commerce product page challenge on Frontend Mentor]
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -49,13 +43,25 @@ Users should be able to:
 
 ### Screenshot
 
+<p align="center">
+Desktop preview
+  <img src="./public/images/desktop-view.jpeg" />
+</p>
+
+<p align="center">
+Tablet preview
+  <img src="./public/images/tablet-view.jpeg" />
+</p>
+
+<p align="center">Mobile preview</p>
+<p align="center">
+  <img src="./public/images/mobile-view.jpeg" />
+</p>
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
-## My process
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/ecommerce-product-page-built-with-nextjs-1NayVJkzG7)
+- Live Site URL: [E-commerce product page live demo](https://ecommerce-product-page-orcin.vercel.app/)
 
 ### Built with
 
@@ -64,19 +70,8 @@ Users should be able to:
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
 
-### What I learned
-
-
-### Continued development
-
-
-### Useful resources
-
-
 ## Author
 
 - Website - [@ichiklaus](https://github.com/ichiklaus)
 - Frontend Mentor - [@ichiklaus](https://www.frontendmentor.io/profile/ichiklaus)
 - Twitter - [@ichiklaus](https://www.twitter.com/ichiklaus)
-
-## Acknowledgments
