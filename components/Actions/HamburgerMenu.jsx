@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import Image from 'next/image';
-import styles from './HamburgerMenu.module.css';
+import styles from '../../styles/HamburgerMenu.module.css';
 
 const HamburgerMenu = ({ hamburgerOpen, setHamburgerOpen }) => {
   const {
     icons: { 'icon-close': iconClose, 'icon-menu': iconMenu },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   return (
     <div>

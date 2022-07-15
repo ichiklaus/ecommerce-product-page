@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useMemo } from 'react';
-import Button from './Button';
-import styles from './Cart.module.css';
+import Button from '../Actions/Button';
+import styles from '../../styles/Cart.module.css';
 
 export default function Checkout({
   productQuantity,
@@ -14,7 +14,7 @@ export default function Checkout({
       'product-name': productName,
       'product-price': productPrice,
     },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   // Importing icons metadata
   const {
@@ -24,7 +24,7 @@ export default function Checkout({
         'product-thumbnail': { 'image-product-1': imageProductThumbnail },
       },
     },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   function computeTotalPrice(productPrice, productQuantity) {
     let calcTotalPrice = Number(productPrice) * Number(productQuantity);

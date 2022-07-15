@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
-import Navbar from './Navbar';
-import Cart from './Cart';
-import HamburgerMenu from './HamburgerMenu';
-import styles from './Header.module.css';
+
+import Navbar from '../Navigation/Navbar';
+import Cart from '../Cards/Cart';
+import HamburgerMenu from '../Actions/HamburgerMenu';
+
+import styles from '../../styles/Header.module.css';
 
 const Header = ({ productQuantity, setProductQuantity }) => {
+  // console.log(siteData);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   // Importing icons' metadata
   const {
@@ -14,7 +17,7 @@ const Header = ({ productQuantity, setProductQuantity }) => {
       'image-avatar': imageAvatar,
       'icon-cart': iconCart,
     },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   const [display, setDisplay] = useState(false);
 

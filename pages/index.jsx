@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import AddToCart from '../components/AddToCart';
-import ProductImageGallery from '../components/ProductImageGallery';
+import AddToCart from '../components/Actions/AddToCart';
+import ImageGallery from '../components/Navigation/ImageGallery';
 import styles from '../styles/Home.module.css';
 
 function formatToFixed2(number) {
@@ -24,12 +24,12 @@ export default function Home({ setProductQuantity }) {
 
   return (
     <div className={styles.wrapper}>
-      <ProductImageGallery
+      <ImageGallery
         setActiveContent={setActiveContent}
         activeContent={activeContent}
         setToggleGallery={setToggleGallery}
         gallery={false}
-        />
+      />
       <section className={styles.productInfo}>
         <div>
           <p>{productBrand}</p>
@@ -40,12 +40,14 @@ export default function Home({ setProductQuantity }) {
               <span>${formatToFixed2(Number(productPrice))}</span>
               <small>{Number(productDiscount)}%</small>
             </p>
-            <p className={styles.discount}>${formatToFixed2(productRealPrice)}</p>
+            <p className={styles.discount}>
+              ${formatToFixed2(productRealPrice)}
+            </p>
           </div>
         </div>
         <AddToCart setProductQuantity={setProductQuantity} />
       </section>
-      <ProductImageGallery
+      <ImageGallery
         setToggleGallery={setToggleGallery}
         setActiveContent={setActiveContent}
         activeContent={activeContent}

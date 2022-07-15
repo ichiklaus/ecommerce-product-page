@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Button from './Button';
-import styles from './AddToCart.module.css';
+import Button from '../Actions/Button';
+import styles from '../../styles/AddToCart.module.css';
 
 export default function AddToCart({ setProductQuantity }) {
   const [counter, setCounter] = useState(0);
@@ -8,7 +8,7 @@ export default function AddToCart({ setProductQuantity }) {
   // Importing control icons metadata
   const {
     icons: { 'icon-plus': iconPlus, 'icon-minus': iconMinus },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   // Add-total-items-to-cart controls: Add one, remove one, submit items.
   const addOneItem = () => setCounter(counter + 1);

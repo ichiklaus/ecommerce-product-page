@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from './ProductImageGallery.module.css';
 
-const ProductImageGallery = ({
+import styles from '../../styles/ImageGallery.module.css';
+
+const ImageGallery = ({
   setActiveContent,
   activeContent,
   toggleGallery,
@@ -30,7 +31,7 @@ const ProductImageGallery = ({
         'image-product': imageProduct,
       },
     },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   // Importing metadata about functionality icons
   const {
@@ -39,7 +40,7 @@ const ProductImageGallery = ({
       'icon-next': iconNext,
       'icon-previous': iconPrevious,
     },
-  } = require('../data.json');
+  } = require('../../data.json');
 
   const imageArray = Object.entries(imageProduct).filter(([key, value]) => {
     if (Number(key.slice(-1)) === activeContent) return value;
@@ -196,4 +197,4 @@ const ProductImageGallery = ({
   );
 };
 
-export default ProductImageGallery;
+export default ImageGallery;
