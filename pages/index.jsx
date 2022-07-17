@@ -1,59 +1,56 @@
-import { useState } from 'react';
-import AddToCart from '../components/Actions/AddToCart';
-import ImageGallery from '../components/Navigation/ImageGallery';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import productsJson from '../products.json';
+import { formatToFixed2 } from '../helpers';
+
+// import { useState } from 'react';
+// import AddToCart from '../components/Actions/AddToCart';
+// import ImageGallery from '../components/Navigation/ImageGallery';
 import styles from '../styles/Home.module.css';
 
-function formatToFixed2(number) {
-  return (Math.round(number * 100) / 100).toFixed(2);
-}
-
-export default function Home({ setProductQuantity }) {
-  const [activeContent, setActiveContent] = useState(1);
-  const [toggleGallery, setToggleGallery] = useState(false);
-
-  const {
-    'fall-limited-sneakers': {
-      'product-brand': productBrand,
-      'product-name': productName,
-      'product-description': productDescription,
-      'product-price': productPrice,
-      'product-discount': productDiscount,
-      'product-real-price': productRealPrice,
-    },
-  } = require('../data.json');
+export default function Home({ productsData }) {
+  const formatId = (name, id) =>
+    name.replace(/\s+/g, '-').toLowerCase().concat('-', id);
 
   return (
     <div className={styles.wrapper}>
-      <ImageGallery
-        setActiveContent={setActiveContent}
-        activeContent={activeContent}
-        setToggleGallery={setToggleGallery}
-        gallery={false}
-      />
-      <section className={styles.productInfo}>
-        <div>
-          <p>{productBrand}</p>
-          <h1>{productName}</h1>
-          <p>{productDescription}</p>
-          <div className={styles.pricing}>
-            <p className={styles.productValue}>
-              <span>${formatToFixed2(Number(productPrice))}</span>
-              <small>{Number(productDiscount)}%</small>
-            </p>
-            <p className={styles.discount}>
-              ${formatToFixed2(productRealPrice)}
-            </p>
-          </div>
+      {productsData.map((item) => (
+        <div key={item.productName} className={styles['product-wrapper']}>
+          <Link
+            href={`/products/[productId]`}
+            as={`/products/${formatId(item.productName, item.id)}`}
+          >
+            <div className={styles['image-wrapper']}>
+              <Image
+                priority
+                src={item.imagePath.imageProduct['imageProduct1']}
+                layout={'fill'}
+                style={{ borderRadius: '10px' }}
+              />
+            </div>
+          </Link>
+          <p>{item.productName}</p>
+          {item.productPrice && item.productDiscount ? (
+            <small className={styles['product-value']}>
+              <span>${formatToFixed2(item.productPrice)}</span>{' '}
+              <span>{Number(item.productDiscount)}%</span>{' '}
+            </small>
+          ) : (
+            <small >
+              ${item.productRetailPrice}
+            </small>
+          )}
         </div>
-        <AddToCart setProductQuantity={setProductQuantity} />
-      </section>
-      <ImageGallery
-        setToggleGallery={setToggleGallery}
-        setActiveContent={setActiveContent}
-        activeContent={activeContent}
-        toggleGallery={toggleGallery}
-        gallery={true} // If component is of type gallery
-      />
+      ))}
     </div>
   );
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      productsData: productsJson,
+    },
+  };
 }

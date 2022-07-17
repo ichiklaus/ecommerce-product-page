@@ -7,10 +7,8 @@
 }
 
 .main {
-  height: 100vh;
-  padding-top: 4rem;
-  flex: 1;
-  display: flex;
+  width: 100%;
+  padding: 4rem 4rem 4rem 5rem;
 }
 
 @media screen and (max-width: 480px) {
