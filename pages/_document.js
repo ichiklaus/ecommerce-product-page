@@ -6,7 +6,6 @@ export default function Document() {
     <Html>
       <Head>
         <Seo />
-        <script src="https://kit.fontawesome.com/75c4091603.js" crossorigin="anonymous"></script>
       </Head>
       <body>
         <Main />
