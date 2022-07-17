@@ -8,7 +8,6 @@ import HamburgerMenu from '../Actions/HamburgerMenu';
 import styles from '../../styles/Header.module.css';
 
 const Header = ({ productQuantity, setProductQuantity }) => {
-  // console.log(siteData);
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   // Importing icons' metadata
   const {

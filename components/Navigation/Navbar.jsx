@@ -19,16 +19,14 @@ const Navbar = ({ hamburgerOpen }) => {
         {/*   */}
         <ul className={styles.navlist}>
           <li>
-            <Link href="/">
+            <Link href='/'>
               <a>Collections</a>
             </Link>
           </li>
           <li>Men</li>
           <li>Women</li>
           <li>
-            <Link href=''>
               <a>About</a>
-            </Link>
           </li>
           <li>Contact</li>
         </ul>
