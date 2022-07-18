@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <span>
-        Challenge coded by{' '}
+        Built by{' '}
         <a
           className={styles.footerCredit}
           href="https://www.frontendmentor.io/profile/ichiklaus"
