@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import productsJson from '../products.json';
-import { formatToFixed2 } from '../helpers';
+import { formatToFixed2 } from '../utils';
+import { loadProductsData } from '../libs/loadProducts';
 
 // import { useState } from 'react';
 // import AddToCart from '../components/Actions/AddToCart';
@@ -48,9 +48,10 @@ export default function Home({ productsData }) {
 }
 
 export async function getStaticProps() {
+  const productsDataJson = await loadProductsData();
   return {
     props: {
-      productsData: productsJson,
+      productsData: productsDataJson,
     },
   };
 }

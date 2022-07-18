@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
-import productsJson from '../../products.json';
-
 import AddToCart from '../../components/Actions/AddToCart';
 import ImageGallery from '../../components/Navigation/ImageGallery';
 
 import styles from '../../styles/Product.module.css';
 
-import { formatToFixed2 } from '../../helpers';
+import { formatToFixed2 } from '../../utils';
+import { loadProductsData } from '../../libs/loadProducts';
 
 export default function Product({ product, setProductQuantity }) {
   const [toggleGallery, setToggleGallery] = useState(false);
@@ -60,7 +59,8 @@ export default function Product({ product, setProductQuantity }) {
 }
 
 export async function getStaticProps({ params }) {
-  const productList = productsJson.filter(
+  const productsData = await loadProductsData();
+  const productList = productsData.filter(
     (item) =>
       item.productName
         .replace(/\s+/g, '-')
@@ -76,7 +76,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = productsJson.map((item) => ({
+  const productsData = await loadProductsData();
+  const paths = productsData.map((item) => ({
     params: {
       productId: item.productName
         .replace(/\s+/g, '-')
